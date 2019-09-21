@@ -185,16 +185,16 @@
 <div class="dropdown" style="position:absolute; left:50px; top:108px; max-height:500px;overflow:scroll;">
   <div class="dropdown-content" style="position:relative;top:35px;width:100px;overflow:scroll;">
     <label><input type="checkbox" class="checkbox" name="chk" id="country" value="China" style="opacity:0">China</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="unitedKingdom">unitedKingdom</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="unitedStates">unitedStates</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Philippines">Philippines</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Russia">Russia</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Chile">Chile</label><br>
-      <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Colombia">Colombia</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Indonesia">Indonesia</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Kyrgyzstan">Kyrgyzstan</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Romania">Romania</label><br>
-    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="southKorea">southKorea</label><br><br><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="unitedKingdom" style="opacity:0">unitedKingdom</label><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="unitedStates" style="opacity:0">unitedStates</label><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Philippines" style="opacity:0">Philippines</label><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Russia" style="opacity:0">Russia</label><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Chile" style="opacity:0">Chile</label><br>
+      <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Colombia" style="opacity:0">Colombia</label><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Indonesia" style="opacity:0">Indonesia</label><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Kyrgyzstan" style="opacity:0">Kyrgyzstan</label><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Romania" style="opacity:0">Romania</label><br>
+    <label><input type="checkbox" class="checkbox" name="chk" id="country" value="southKorea"style="opacity:0">southKorea</label><br><br><br>
 
 
 
@@ -260,7 +260,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
         .selectAll("path")
         .data(data.features)
         .enter().append("path")
-            .attr("fill", "#1f0c38")
+            .attr("fill", "#506aa3")
             .attr("d", d3.geoPath()
                 .projection(projection)
             )
