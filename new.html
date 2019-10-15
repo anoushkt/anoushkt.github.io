@@ -456,15 +456,15 @@
 
 <div class="dropdown" style="position:absolute; left:900px; top:110px;font-size: 25px; ">
     <div class="dropdown-content" style="position:relative;top:45px;width:200px;">
-    <input type="checkbox" id="af1"
+    <input type="radio" id="af1"
      name="af" value=10 checked onclick="update()">
     <label for="af1">10</label>
     <br>
-    <input type="checkbox" id="af2"
+    <input type="radio" id="af2"
      name="af" value=20 onclick="update()">
     <label for="af2">20</label>
     <br>
-    <input type="checkbox" id="contactChoice3"
+    <input type="radio" id="contactChoice3"
      name="af" value=30 onclick="update()">
     <label for="af3">30</label>
 	</div>
@@ -536,6 +536,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
                    // When a button change, I run the update function
                    d3.selectAll(".checkbox").on("change",update);
                    d3.selectAll(".checkbox").on("change",update);
+	            d3.selectAll(".radio").on("change",update);
                    // And I initialize it at the beginning
                    update()
 })
