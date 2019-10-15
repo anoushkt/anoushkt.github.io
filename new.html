@@ -524,7 +524,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
                        grp = cb.property("value")
                        // If the box is check, I show the group
                        if(cb.property("checked")){
-                         svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){if (d.protocol==document.querySelector('input[name="contact"]:checked').value  && d.ampFactor<document.querySelector('input[name="af"]:checked').value)
+                         svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){if (d.protocol==document.querySelector('input[name="contact"]:checked').value  && d.ampFactor<10)
                          {return d.radius ;}
                          else {return 0;} } )
                        // Otherwise I hide it
