@@ -155,14 +155,50 @@
  z-index: 1;
  font-size: 12px;
 }
-.dropdown:hover .dropdown-content {
-  display: block;
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
 }
+	
+	
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+	
+	.show {display:block;}
+
 </style>
 
 
 
       <script>
+	      
+	      
+	     /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+} 
         $(function() {
     $('#chkfilter').on('keyup', function() {
         var query = this.value;
@@ -175,13 +211,15 @@
         });
     });
     });</script>
-
 <input type="text" id="chkfilter" placeholder="Countries" style="position:absolute; left:40px; top:110px;border: 3px solid #000000;font-size:25px;";>
 <input type="text" id="checkamp" placeholder="Protocols" style="position:absolute; left:470px; top:110px;border: 3px solid #000000;font-size:25px;";>
  <input type="text" id="checkamp" placeholder="Amplification" style="position:absolute; left:900px; top:110px;border: 3px solid #000000; font-size:25px;">
 
+	  
 <div class="dropdown" style="position:absolute; left:40px; top:110px; max-height:500px;font-size:55px;overflow:scroll;">
-  <div class="dropdown-content" style="position:relative;top:35px;width:100px;overflow:scroll;">
+	<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+	   <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 											    
    
     <label><input type="checkbox" class="checkbox" name="chk" id="country" value="Afghanistan"> Afghanistan</label>
@@ -546,4 +584,28 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
                    // And I initialize it at the beginning
                    update()
 })
+</script>
+	  
+	  <script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
 </script>
