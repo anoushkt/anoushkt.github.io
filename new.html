@@ -458,15 +458,15 @@
     <div class="dropdown-content" style="position:relative;top:45px;width:200px;">
     <input type="checkbox" id="af1"
      name="af" value=10 checked onclick="update()">
-    <label for="af1">greater than 10</label>
+    <label for="af1">10</label>
     <br>
     <input type="checkbox" id="af2"
      name="af" value=20 onclick="update()">
-    <label for="af2">greater than 20</label>
+    <label for="af2">20</label>
     <br>
     <input type="checkbox" id="contactChoice3"
      name="af" value=30 onclick="update()">
-    <label for="af3">greater than 30</label>
+    <label for="af3">30</label>
 	</div>
 </div>
 
@@ -524,7 +524,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
                        grp = cb.property("value")
                        // If the box is check, I show the group
                        if(cb.property("checked")){
-                         svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){if (d.protocol==document.querySelector('input[name="contact"]:checked').value  && d.ampFactor<10)
+                         svg.selectAll("."+grp).transition().duration(1000).style("opacity", 1).attr("r", function(d){if (d.protocol==document.querySelector('input[name="contact"]:checked').value  && d.ampFactor<document.querySelector('input[name="af"]:checked').value)
                          {return d.radius ;}
                          else {return 0;} } )
                        // Otherwise I hide it
