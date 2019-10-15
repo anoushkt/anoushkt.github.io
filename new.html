@@ -182,9 +182,9 @@
         var query = this.value;
         $('[id^="country"]').each(function(i, elem) {
               if (elem.value.indexOf(query) != -1) {
-                  $(this).closest('label').display="";
+                  $(this).closest('label').show();
               }else{
-                  $(this).closest('label').display="none";
+                  $(this).closest('label').hide();
               }
         });
     });
